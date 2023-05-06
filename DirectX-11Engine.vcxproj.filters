@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine Systems">
+      <UniqueIdentifier>{3130076e-7656-45a5-a4b6-3c5ede3405b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Physics System">
+      <UniqueIdentifier>{00c24dbc-a3a4-40bf-8ce6-86469bbb57d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Input System">
+      <UniqueIdentifier>{e8781009-c307-4baf-8ceb-9247af1e5fec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Input System\Keyboard Files">
+      <UniqueIdentifier>{107dea56-20aa-43cc-9df4-c3df6ed9d2f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Input System\Mouse Files">
+      <UniqueIdentifier>{eac5499f-e3cb-429b-bd00-ca51ff03c087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\MessageSystem">
+      <UniqueIdentifier>{ffe3a3cd-90c8-407d-a6ab-1d9dc2e1b297}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Renderer Files">
+      <UniqueIdentifier>{b784f1ab-2709-4d2c-abd4-f22a98e7b709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Renderer Files\Cube Files">
+      <UniqueIdentifier>{98497fcf-90d8-4f05-8a31-c2155b86cba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Renderer Files\Triangle Files">
+      <UniqueIdentifier>{8290ce77-f1c1-4370-85b4-d904785b3252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Renderer Files\Camera">
+      <UniqueIdentifier>{277b5fa2-5a22-4f5c-97c8-a8cc29d5d08f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Windows files">
+      <UniqueIdentifier>{da779abb-8a72-4563-b0f1-9d0dc4eb409a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine Files">
+      <UniqueIdentifier>{f9ede34b-8a96-4517-843f-7d748c8ca7b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine Files\GameEngine">
+      <UniqueIdentifier>{9d866c44-0043-47f9-a0a2-27f18cf11764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine Files\GameTimer files">
+      <UniqueIdentifier>{01fd6420-a7aa-4583-bc3b-9f49950d2bd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\GameManager System">
+      <UniqueIdentifier>{73aeac18-4d42-48c5-a86c-fd31143ace07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Game Factory System">
+      <UniqueIdentifier>{6abc5df9-4530-4fd6-8651-64e1cedd3a38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject &amp; Component Files">
+      <UniqueIdentifier>{cd0733e2-b3d2-4ba2-8342-272ab5b35995}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject &amp; Component Files\Component Files">
+      <UniqueIdentifier>{0fad0b02-342c-439c-8499-192868523c2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject &amp; Component Files\Component Files\Sprite Component">
+      <UniqueIdentifier>{bb1e6112-360c-45ba-b475-fe509db1ac0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject &amp; Component Files\Component Files\Physics Component">
+      <UniqueIdentifier>{0ee1b6fe-4aae-4b35-b3b4-71db62e39096}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="box2d files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine Systems\WindowsConsole System">
+      <UniqueIdentifier>{e1fc016d-92b2-420e-bbc0-0add58ed90fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine Systems\Renderer Files\Texture Files">
+      <UniqueIdentifier>{4ba96ca0-c7bc-46e3-a34a-bed1662904af}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX-11Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d3dx11effect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryGenerator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LightHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureMgr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Waves.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xnacollision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dxerr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Engine Systems\Renderer Files\Triangle Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsComponent.h">
+      <Filter>GameObject &amp; Component Files\Component Files\Physics Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Engine Systems\Input System\Keyboard Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyboardEvent.h">
+      <Filter>Engine Systems\Input System\Keyboard Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Engine Systems\Input System\Mouse Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>Engine Systems\Input System\Mouse Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Engine Systems\Renderer Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Engine Systems\Renderer Files\Cube Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Engine Systems\MessageSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTimer.h">
+      <Filter>GameEngine Files\GameTimer files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Engine Systems\Input System</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Engine Systems\Windows files</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Engine Systems\Renderer Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>GameObject &amp; Component Files\Component Files\Sprite Component</Filter>
+    </ClInclude>
+    <ClInclude Include="IComponent.h">
+      <Filter>GameObject &amp; Component Files\Component Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFactory.h">
+      <Filter>Engine Systems\Game Factory System</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEngine.h">
+      <Filter>GameEngine Files\GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManagerSystem.h">
+      <Filter>Engine Systems\GameManager System</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsSystem.h">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClInclude>
+    <ClInclude Include="ISystem.h">
+      <Filter>Engine Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameObject &amp; Component Files</Filter>
+    </ClInclude>
+    <ClInclude Include="box2d\box2d.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_chain_circle_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_chain_polygon_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_circle_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_contact_solver.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_edge_circle_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_edge_polygon_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_island.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_polygon_circle_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="Box2D\b2_polygon_contact.h">
+      <Filter>box2d files</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsConsole.h">
+      <Filter>Engine Systems\WindowsConsole System</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Engine Systems\Renderer Files\Cube Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Engine Systems\Input System\Mouse Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseEvent.cpp">
+      <Filter>Engine Systems\Input System\Mouse Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Engine Systems\Input System\Keyboard Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyboardEvent.cpp">
+      <Filter>Engine Systems\Input System\Keyboard Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Engine Systems\Renderer Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Engine Systems\Renderer Files\Triangle Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTimer.cpp">
+      <Filter>GameEngine Files\GameTimer files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputSystem.cpp">
+      <Filter>Engine Systems\Input System</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Engine Systems\Windows files</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Engine Systems\Renderer Files\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>GameObject &amp; Component Files\Component Files\Sprite Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFactory.cpp">
+      <Filter>Engine Systems\Game Factory System</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEngine.cpp">
+      <Filter>GameEngine Files\GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManagerSystem.cpp">
+      <Filter>Engine Systems\GameManager System</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsSystem.cpp">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsComponent.cpp">
+      <Filter>GameObject &amp; Component Files\Component Files\Physics Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObject &amp; Component Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_block_allocator.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_body.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_broad_phase.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_chain_circle_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_chain_polygon_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_chain_shape.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_circle_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_circle_shape.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_collide_circle.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_collide_edge.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_collide_polygon.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_collision.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_contact_manager.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_contact_solver.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_distance.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_distance_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_draw.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_dynamic_tree.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_edge_circle_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_edge_polygon_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_edge_shape.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_fixture.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_friction_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_gear_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_island.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_math.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_motor_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_mouse_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_polygon_circle_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_polygon_contact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_polygon_shape.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_prismatic_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_pulley_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_revolute_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_rope.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_settings.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_stack_allocator.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_time_of_impact.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_timer.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_weld_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_wheel_joint.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_world.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Box2D\b2_world_callbacks.cpp">
+      <Filter>box2d files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectX-11Engine.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Source Files</Filter>
+    </Image>
+    <Image Include="DirectX-11Engine.ico">
+      <Filter>Source Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="cubePixelShader.hlsl">
+      <Filter>Engine Systems\Renderer Files\Cube Files</Filter>
+    </FxCompile>
+    <FxCompile Include="cubeVertexShader.hlsl">
+      <Filter>Engine Systems\Renderer Files\Cube Files</Filter>
+    </FxCompile>
+    <FxCompile Include="trianglePixelShader.hlsl">
+      <Filter>Engine Systems\Renderer Files\Triangle Files</Filter>
+    </FxCompile>
+    <FxCompile Include="triangleVertexShader.hlsl">
+      <Filter>Engine Systems\Renderer Files\Triangle Files</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
