@@ -97,10 +97,10 @@ void Cube::createVertexBuffer(Renderer* renderer) {
 	// Define vertices for the cube directly
 	// keep the ones with negative z later
 	Vertex vertices[] = {
-		{ -1.0f, -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f},
+		{ -1.0f, -1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f},
 		{ -1.0f, -1.0f, +1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f },
-		{ -1.0f, +1.0f, -1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f},
-		{ -1.0f, +1.0f, +1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f },
+		{ -1.0f, +1.0f, -1.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f},
+		{ -1.0f, +1.0f, +1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f },
 		//{ +1.0f, -1.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f},
 		//{ +1.0f, -1.0f, +1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f },
 		//{ +1.0f, +1.0f, -1.0f, 1.0f, 1.0f, 0.0f, 1.0f, 0.0f},

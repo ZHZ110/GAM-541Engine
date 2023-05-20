@@ -3,6 +3,7 @@
 #include "Triangle.h"
 #include "Cube.h"
 #include "Texture.h"
+#include "WICTextureLoader.h"
 
 Renderer* RENDERER = nullptr;
 
@@ -139,15 +140,19 @@ ID3D11DeviceContext* Renderer::getDeviceContext() {
 }
 
 void Renderer::LoadTextures() {
+	const std::string spaceship_name = "spaceship";
+	const std::string enemy_name = "enemy";
+	const std::string bullet_name = "bullet";
+	const std::string file_path = "Assets/Textures/";
 	std::string spaceship_path = "Assets/Textures/spaceship.png";
 	std::string enemy_path = "Assets/Textures/enemy.png";
 	std::string bullet_path = "Assets/Textures/bullet.png";
 	texture_map["spaceship"] = CreateTexture(spaceship_path);
 	texture_map["enemy"] = CreateTexture(enemy_path);
 	texture_map["bullet"] = CreateTexture(bullet_path);
-	//spriteComponents[0]->textureName = "sapceship";
-	//spriteComponents[1]->textureName = "enemy";
-	//spriteComponents[2]->textureName = "bullet";
+	spriteComponents[0]->textureName = spaceship_name;
+	spriteComponents[1]->textureName = enemy_name;
+	spriteComponents[2]->textureName = bullet_name;
 }
 
 void Renderer::setTexture(const std::string& texture_name) {
@@ -157,48 +162,10 @@ void Renderer::setTexture(const std::string& texture_name) {
 Texture* Renderer::CreateTexture(const std::string& filepath) {
 	HRESULT hr = S_OK;
 
-	// Initialization0
-	IWICImagingFactory* factory;
-	hr = CoCreateInstance(CLSID_WICImagingFactory, nullptr, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&factory));
-
-	IWICBitmapDecoder* pIDecoder = NULL;
-	IWICBitmapFrameDecode* pIDecoderFrame = NULL;
-
-	// Every time you want to load a texture
 	std::wstring tempStr = std::wstring(filepath.begin(), filepath.end());
 	LPCWSTR wideString = tempStr.c_str();
-	hr = factory->CreateDecoderFromFilename(wideString, nullptr, GENERIC_READ, WICDecodeMetadataCacheOnDemand, &pIDecoder);
-	hr = pIDecoder->GetFrame(0, &pIDecoderFrame);
-	UINT width, height;
-	hr = pIDecoderFrame->GetSize(&width, &height);
 
-	D3D11_TEXTURE2D_DESC desc;
-	ZeroMemory(&desc, sizeof(desc));
-	desc.Width = width;
-	desc.Height = height;
-	desc.MipLevels = 1;
-	desc.ArraySize = 1;
-	desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-	desc.SampleDesc.Count = 1;
-	desc.SampleDesc.Quality = 0;
-	desc.Usage = D3D11_USAGE_DEFAULT;
-	desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
-	desc.CPUAccessFlags = 0;
-	desc.MiscFlags = 0;
-
-	UINT bytesPerPixel = 4;
-	UINT stride = width * bytesPerPixel;
-	UINT size = width * height * 4;
-	BYTE* temp = new BYTE[size];
-	hr = pIDecoderFrame->CopyPixels(nullptr, stride, size, temp);
-	D3D11_SUBRESOURCE_DATA data;
-	ZeroMemory(&data, sizeof(data));
-	data.pSysMem = temp;
-	data.SysMemPitch = width;
-	data.SysMemSlicePitch = size;
-
-	ID3D11Texture2D* texture = nullptr;
-	hr =getDevice()->CreateTexture2D(&desc, &data, &texture);
-
-	return new Texture(texture, this);
+	ID3D11ShaderResourceView* mDiffuseMapSRV = nullptr;
+	hr = DirectX::CreateWICTextureFromFile(m_device, m_deviceContext, tempStr.c_str(), nullptr, &mDiffuseMapSRV, 0);
+	return new Texture(mDiffuseMapSRV);
 }

@@ -6,11 +6,8 @@ class Renderer;
 
 class Texture {
 public:
-	Texture(ID3D11Texture2D* texture_ptr, Renderer* renderer);
+	Texture(ID3D11ShaderResourceView* texture_ptr);
 	void bindTexture2D(Renderer* renderer);
-	ID3D11Texture2D* m_texture = NULL;
 private:
-	void createTexture2D(Renderer* renderer);
-	//ID3D11Texture2D* m_texture = NULL;
 	ID3D11ShaderResourceView* m_texture_view = NULL;
 };

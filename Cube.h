@@ -1,13 +1,12 @@
 #pragma once
-#include "pch.h"
 #include "d3dx11effect.h"
 #include "Camera.h"
-#include "Sprite.h"
 namespace dx = DirectX;
 
 class Renderer;
 class Texture;
 class Sampler;
+class Sprite;
 
 struct model_view_proj {
 	dx::XMFLOAT4X4 model;
