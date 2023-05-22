@@ -17,7 +17,7 @@ struct VSOut {
 	float2 tex : TexCoord;
 	float3 color : Color;
 	float4 pos: SV_Position;
-	//float2 row_col: RowCol;
+	float2 row_col: RowCol;
 };
 
 cbuffer cbPerObject
@@ -40,7 +40,9 @@ VSOut main(float3 position : Position, float3 color : Color, float2 tex:TexCoord
 	pos = mul(pos, projection);
 	vso.pos = pos;
 	vso.color = color;
-	vso.tex.x = tex.x/4;
-	vso.tex.y = tex.y/2;
+	vso.tex.x = tex.x/numCol;
+	vso.tex.y = tex.y/numRow;
+	vso.row_col.x = numCol;
+	vso.row_col.y = numRow;
 	return vso;
 }
