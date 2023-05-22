@@ -20,7 +20,7 @@ public:
 	ID3D11DeviceContext* getDeviceContext();
 	Camera* getCamera();
 	void LoadTextures();
-	void setTexture(const std::string& texture_name);
+	void setTexture(Sprite* spriteComponent);
 	void addSprite(Sprite* sprite);
 private:
 	// Device components

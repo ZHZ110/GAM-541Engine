@@ -36,8 +36,9 @@ void Renderer::Update(float dt)
 		if (spriteComponents[i] != NULL && spriteComponents[i]->getParent()->getRender() == true) {
 			//auto texture = texture_map[spriteComponents[i]->textureName];
 			//auto texture = texture_map["darkbrick"];
-			setTexture(spriteComponents[i]->textureName);
+			setTexture(spriteComponents[i]);
 			cube.Draw(this, spriteComponents[i], currTexture, dt);
+			spriteComponents[i]->frameUpdate(dt);
 		}
 	}
 	//triangle.Draw(this);
@@ -151,12 +152,19 @@ void Renderer::LoadTextures() {
 	texture_map["enemy"] = CreateTexture(enemy_path);
 	texture_map["bullet"] = CreateTexture(bullet_path);
 	spriteComponents[0]->textureName = spaceship_name;
+	spriteComponents[0]->setRows(2);
+	spriteComponents[0]->setCols(4);
 	spriteComponents[1]->textureName = enemy_name;
+	spriteComponents[1]->setRows(1);
+	spriteComponents[1]->setCols(1);
 	spriteComponents[2]->textureName = bullet_name;
+	spriteComponents[2]->setRows(1);
+	spriteComponents[2]->setCols(1);
 }
 
-void Renderer::setTexture(const std::string& texture_name) {
-	currTexture = texture_map[texture_name];
+void Renderer::setTexture(Sprite* spriteComponent) {
+	currTexture = texture_map[spriteComponent->textureName];
+	spriteComponent->setSpriteSource(currTexture);
 }
 
 Texture* Renderer::CreateTexture(const std::string& filepath) {

@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Box2D\b2_chain_circle_contact.h" />
     <ClInclude Include="Box2D\b2_chain_polygon_contact.h" />
     <ClInclude Include="Box2D\b2_circle_contact.h" />
@@ -187,6 +188,7 @@
     <ClInclude Include="xnacollision.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Box2D\b2_block_allocator.cpp" />
     <ClCompile Include="Box2D\b2_body.cpp" />
     <ClCompile Include="Box2D\b2_broad_phase.cpp" />

@@ -79,6 +79,9 @@
     <Filter Include="Engine Systems\Renderer Files\Texture Files">
       <UniqueIdentifier>{4ba96ca0-c7bc-46e3-a34a-bed1662904af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject &amp; Component Files\Component Files\Animation Component">
+      <UniqueIdentifier>{f12346f7-4e86-4899-8271-8a3611dc4edc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -224,6 +227,9 @@
     </ClInclude>
     <ClInclude Include="Sampler.h">
       <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>GameObject &amp; Component Files\Component Files\Animation Component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -424,6 +430,9 @@
     </ClCompile>
     <ClCompile Include="Sampler.cpp">
       <Filter>Engine Systems\Renderer Files\Texture Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>GameObject &amp; Component Files\Component Files\Animation Component</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

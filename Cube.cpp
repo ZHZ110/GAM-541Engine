@@ -17,8 +17,14 @@ struct Vertex {
 	float u, v;
 };
 
-struct ConstantBuffer {
-	dx::XMMATRIX model;
+struct const_buffer_struct {
+	dx::XMFLOAT4X4 model;
+	dx::XMFLOAT4X4 view;
+	dx::XMFLOAT4X4 proj;
+	int numRow;
+	int numCol;
+	int currentFrame;
+	int endFrame;
 };
 
 Cube::Cube() {
@@ -45,15 +51,6 @@ void Cube::Initialize(Renderer* renderer) {
 
 void Cube::Draw(Renderer* renderer, Sprite* sprite, Texture* texture, float dt) {
 	auto deviceContext = renderer->getDeviceContext();
-	// Bind Cube shaders
-	//deviceContext->ClearDepthStencilView();
-	/*world_view_proj = {
-		0,1,0,0
-		1,0,0,0
-		0,1,0,0
-		0,0,0,1
-	};*/
-	//deviceContext->UpdateSubresource(m_constBuffer,0,NULL,&world_view_proj, 0,0);
 	deviceContext->IASetInputLayout(m_inputLayout);
 	deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 	// Bind vertex and pixel shaders
@@ -67,17 +64,6 @@ void Cube::Draw(Renderer* renderer, Sprite* sprite, Texture* texture, float dt) 
 	deviceContext->IASetVertexBuffers(0, 1, &m_cubeVB, &stride, &offset);
 	deviceContext->IASetIndexBuffer(m_cubeIB, DXGI_FORMAT_R32_UINT, 0);
 
-
-	//D3DX11_TECHNIQUE_DESC techDesc;
-	//mTech->GetDesc(&techDesc);
-	//for (UINT p = 0; p < techDesc.Passes; ++p)
-	//{
-	//	mTech->GetPassByIndex(p)->Apply(0, deviceContext);
-	//	// 36 indices for the box.
-	//	deviceContext->DrawIndexed(36, 0, 0);
-	//}
-	//deviceContext->DrawIndexed(36, 0, 0);
-	//angle += dt;
 	createConstantBuffer(sprite, renderer);
 	// need to bind the constant buffer to vertex shader
 	deviceContext->VSSetConstantBuffers(0, 1, &m_constBuffer);
@@ -166,21 +152,26 @@ void Cube::createConstantBuffer(Sprite* sprite, Renderer* renderer) {
 	XMMATRIX T = dx::XMMatrixTranslationFromVector(sprite->getParent()->getTranslate());
 	renderer->getCamera()->UpdateViewMatrix();
 	dx::XMMATRIX scale_matrix = dx::XMMatrixScalingFromVector(sprite->getParent()->getScale());
-	dx::XMMATRIX position = scale_matrix * dx::XMMatrixRotationY(dx::XM_PI/2) * dx::XMMatrixTranslationFromVector(sprite->getParent()->getTranslate());
+	dx::XMMATRIX rotation_matrix = dx::XMMatrixRotationX(dx::XM_PI / 2);
+	dx::XMMATRIX position = scale_matrix * rotation_matrix * dx::XMMatrixRotationY(dx::XM_PI/2) * dx::XMMatrixTranslationFromVector(sprite->getParent()->getTranslate());
 	position = dx::XMMatrixTranspose(position);
 	//dx::XMStoreFloat4x4(&world_view_proj.model, dx::XMMatrixTranslationFromVector(sprite->getParent()->getTranslate()));
-	dx::XMStoreFloat4x4(&world_view_proj.model, position);
-	dx::XMStoreFloat4x4(&world_view_proj.view, renderer->getCamera()->View()); // the camera
-	dx::XMStoreFloat4x4(&world_view_proj.proj, renderer->getCamera()->Proj()); // rotation
+	const_buffer_struct cbuffer_struct;
+	dx::XMStoreFloat4x4(&cbuffer_struct.model, position);
+	dx::XMStoreFloat4x4(&cbuffer_struct.view, renderer->getCamera()->View()); // the camera
+	dx::XMStoreFloat4x4(&cbuffer_struct.proj, renderer->getCamera()->Proj()); // rotation
+	cbuffer_struct.numCol = sprite->getCols();
+	cbuffer_struct.numRow = sprite->getRows();
+	cbuffer_struct.currentFrame = 0;
 	D3D11_BUFFER_DESC cbd;
 	cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	cbd.Usage = D3D11_USAGE_DYNAMIC;
 	cbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 	cbd.MiscFlags = 0u;
-	cbd.ByteWidth = sizeof(world_view_proj);
+	cbd.ByteWidth = sizeof(cbuffer_struct);
 	cbd.StructureByteStride = 0u;
 	D3D11_SUBRESOURCE_DATA cinitData = {};
-	cinitData.pSysMem = &world_view_proj;
+	cinitData.pSysMem = &cbuffer_struct;
 	renderer->getDevice()->CreateBuffer(&cbd, &cinitData, &m_constBuffer);
 }
 

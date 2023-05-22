@@ -17,6 +17,7 @@ struct VSOut {
 	float2 tex : TexCoord;
 	float3 color : Color;
 	float4 pos: SV_Position;
+	//float2 row_col: RowCol;
 };
 
 cbuffer cbPerObject
@@ -24,9 +25,10 @@ cbuffer cbPerObject
 	float4x4 model;
 	float4x4 view;
 	float4x4 projection;
-	//float4x4 gWorldInvTranspose;
-	//float4x4 gWorldViewProj;
-	//Material gMaterial;
+	int numRow;
+	int numCol;
+	int currentFrame;
+	int endFrame;
 };
 
 VSOut main(float3 position : Position, float3 color : Color, float2 tex:TexCoord) {
@@ -38,6 +40,7 @@ VSOut main(float3 position : Position, float3 color : Color, float2 tex:TexCoord
 	pos = mul(pos, projection);
 	vso.pos = pos;
 	vso.color = color;
-	vso.tex = tex;
+	vso.tex.x = tex.x/4;
+	vso.tex.y = tex.y/2;
 	return vso;
 }
