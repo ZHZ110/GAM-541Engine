@@ -1,19 +1,9 @@
 #include "Animation.h"
 
 Animation::Animation(GameObject* parent) : Sprite(parent) {
-	registerComponent();
-	frameIndex = 1;
+	setCurrFrame(0);
 	frameDuration = 1.0f;
 	frameDelay = frameDuration;
-	if (getName() == "spaceship") {
-		frameCount = 8;
-	}
-	else if (getName() == "enemy") {
-		frameCount = 1;
-	}
-	else if (getName() == "bullet") {
-		frameCount = 1;
-	}
 }
 
 const std::string& Animation::getName() {
@@ -23,11 +13,13 @@ const std::string& Animation::getName() {
 void Animation::frameUpdate(float dt) {
 	frameDelay -= dt;
 	if (frameDelay < 0) {
-		frameIndex++;
-		if (frameIndex > frameCount) {
-			frameIndex = 1;
-			frameDelay = frameDuration;
+		// move on to the next frame
+		int currentFrame = getCurrFrame() + 1;
+		setCurrFrame(currentFrame);
+		if (currentFrame >= getTotalFrames()) {
+			setCurrFrame(0);
 		}
+		frameDelay = frameDuration;
 	}
 
 }

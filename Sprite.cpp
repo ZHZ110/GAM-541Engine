@@ -6,7 +6,6 @@ extern Renderer* RENDERER;
 
 Sprite::Sprite(GameObject* parent) : IComponent(parent) {
 	registerComponent();
-	currFrameIndex = 1;
 }
 
 void Sprite::registerComponent() {
@@ -41,4 +40,20 @@ int Sprite::getRows() {
 
 int Sprite::getCols() {
 	return numCols;
+}
+
+int Sprite::getTotalFrames() {
+	return totalFrames;
+}
+
+void Sprite::setTotalFrames(int frameCount) {
+	totalFrames = frameCount;
+}
+
+int Sprite::getCurrFrame() {
+	return currFrame;
+}
+
+void Sprite::setCurrFrame(int currentFrame) {
+	currFrame = currentFrame;
 }

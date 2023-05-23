@@ -16,13 +16,16 @@ public:
 	void setSpriteSource(Texture* source);
 	int getRows();
 	int getCols();
-	int getFrameIndex();
+	int getCurrFrame();
+	int getTotalFrames();
 	void setRows(int nRows);
 	void setCols(int nCols);
-	void setFrameIndex(int nFrameIndex);
+	void setTotalFrames(int frameCount);
+	void setCurrFrame(int currentFrame);
 private:
 	int numRows;
 	int numCols;
-	int currFrameIndex;
+	int currFrame;
+	int totalFrames;
 	Texture* spriteSource;
 };

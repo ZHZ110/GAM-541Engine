@@ -151,15 +151,18 @@ void Renderer::LoadTextures() {
 	texture_map["spaceship"] = CreateTexture(spaceship_path);
 	texture_map["enemy"] = CreateTexture(enemy_path);
 	texture_map["bullet"] = CreateTexture(bullet_path);
-	spriteComponents[0]->textureName = spaceship_name;
+	//spriteComponents[0]->textureName = spaceship_name;
 	spriteComponents[0]->setRows(2);
 	spriteComponents[0]->setCols(4);
-	spriteComponents[1]->textureName = enemy_name;
-	spriteComponents[1]->setRows(1);
-	spriteComponents[1]->setCols(1);
-	spriteComponents[2]->textureName = bullet_name;
-	spriteComponents[2]->setRows(1);
-	spriteComponents[2]->setCols(1);
+	spriteComponents[0]->setTotalFrames(8);
+	spriteComponents[1]->setRows(2);
+	spriteComponents[1]->setCols(4);
+	spriteComponents[1]->setTotalFrames(8);
+	for (int i = 2; i < spriteComponents.size(); ++i) {
+		spriteComponents[i]->setRows(1);
+		spriteComponents[i]->setCols(1);
+		spriteComponents[i]->setTotalFrames(1);
+	}
 }
 
 void Renderer::setTexture(Sprite* spriteComponent) {

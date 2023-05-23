@@ -162,7 +162,7 @@ void Cube::createConstantBuffer(Sprite* sprite, Renderer* renderer) {
 	dx::XMStoreFloat4x4(&cbuffer_struct.proj, renderer->getCamera()->Proj()); // rotation
 	cbuffer_struct.numCol = sprite->getCols();
 	cbuffer_struct.numRow = sprite->getRows();
-	cbuffer_struct.currentFrame = 0;
+	cbuffer_struct.currentFrame = sprite->getCurrFrame();
 	D3D11_BUFFER_DESC cbd;
 	cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	cbd.Usage = D3D11_USAGE_DYNAMIC;

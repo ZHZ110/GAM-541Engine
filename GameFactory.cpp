@@ -1,5 +1,6 @@
 #include "GameFactory.h"
 #include "Sprite.h"
+#include "Animation.h"
 
 GameFactory* FACTORY = 0;
 
@@ -53,8 +54,11 @@ GameObject* GameFactory::CreateGameObject(XMVECTOR translation, float scaling, c
 		}
 	}
 	Sprite* new_sprite = new Sprite((GO));
+	Animation* new_animation = new Animation(GO);
 	new_sprite->textureName = name;
+	new_animation->textureName = name;
 	GO->components.push_back(new_sprite);
+	GO->components.push_back(new_animation);
 	GO->components.push_back(new PhysicsComponent(GO,_type));
 	return GO;
 }
