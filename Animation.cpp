@@ -2,7 +2,7 @@
 
 Animation::Animation(GameObject* parent) : Sprite(parent) {
 	setCurrFrame(0);
-	frameDuration = 1.0f;
+	frameDuration = 0.5f;
 	frameDelay = frameDuration;
 }
 

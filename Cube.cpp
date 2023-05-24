@@ -163,6 +163,9 @@ void Cube::createConstantBuffer(Sprite* sprite, Renderer* renderer) {
 	cbuffer_struct.numCol = sprite->getCols();
 	cbuffer_struct.numRow = sprite->getRows();
 	cbuffer_struct.currentFrame = sprite->getCurrFrame();
+	//if (cbuffer_struct.currentFrame > 0) {
+		//printf("current Frame over 0\n");
+	//}
 	D3D11_BUFFER_DESC cbd;
 	cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
 	cbd.Usage = D3D11_USAGE_DYNAMIC;

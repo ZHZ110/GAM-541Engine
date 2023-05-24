@@ -19,9 +19,10 @@ struct Input {
 float4 main(Input input) : SV_TARGET
 {
 	//return float4(input.tc.xy,0,1);
-	//input.tc.x += (1/input.rc.x); // offset the topleft corner
-	input.tc.x += input.offset.x;
+	input.tc.x += input.offset.x; // offset the topleft corner
+	//input.tc.x += 0.25;
 	input.tc.y += input.offset.y;
+	//input.tc.y += 0.5;
 	return tex.Sample(samAnisotropic,input.tc);
 	//return float4(input.color.r, input.color.g, input.color.b, 1.0f);
 }

@@ -42,7 +42,7 @@ VSOut main(float3 position : Position, float3 color : Color, float2 tex:TexCoord
 	vso.color = color;
 	vso.tex.x = tex.x/numCol;
 	vso.tex.y = tex.y/numRow;
-	vso.offset.x = (1 / numCol) * (currentFrame % numCol);
-	vso.offset.y = (1 / numRow) * (int)(currentFrame / numCol);
+	vso.offset.x = (1.0f / numCol) * (currentFrame % numCol);
+	vso.offset.y = (1.0f / numRow) * (int)(currentFrame / numCol);
 	return vso;
 }
