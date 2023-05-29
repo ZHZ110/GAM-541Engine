@@ -82,6 +82,9 @@
     <Filter Include="GameObject &amp; Component Files\Component Files\Animation Component">
       <UniqueIdentifier>{f12346f7-4e86-4899-8271-8a3611dc4edc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine Systems\Controller System">
+      <UniqueIdentifier>{84935422-a66a-4b33-9a2e-526d3407bb4c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -230,6 +233,15 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>GameObject &amp; Component Files\Component Files\Animation Component</Filter>
+    </ClInclude>
+    <ClInclude Include="IController.h">
+      <Filter>Engine Systems\Controller System</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Engine Systems\Controller System</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Engine Systems\Controller System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -433,6 +445,15 @@
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>GameObject &amp; Component Files\Component Files\Animation Component</Filter>
+    </ClCompile>
+    <ClCompile Include="IController.cpp">
+      <Filter>Engine Systems\Controller System</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>Engine Systems\Controller System</Filter>
+    </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Engine Systems\Controller System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

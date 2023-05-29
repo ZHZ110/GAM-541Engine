@@ -18,7 +18,6 @@ void GameFactory::Update(float dt) {
 		delete go;
 	}
 	gameObjectsForDeletion.resize(0);
-
 	// go through each element
 	std::vector<GameObject*>::iterator iter;
 	for (iter = gameObjects.begin(); iter != gameObjects.end(); ++iter) {
@@ -38,6 +37,10 @@ void GameFactory::ShutDown() {
 
 void GameFactory::getMessage(const Message* msg) {
 
+}
+
+GameObject* GameFactory::getGameObjectByIndex(int index) {
+	return gameObjects.at(index);
 }
 
 // deal with game objects and its components

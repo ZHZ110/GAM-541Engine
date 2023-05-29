@@ -1,6 +1,7 @@
 #pragma once
 #include "ISystem.h"
 #include "GameObject.h"
+#include "PlayerController.h"
 
 class GameManagerSystem : public ISystem{
 
@@ -23,7 +24,8 @@ private:
 	GameState currentGameState;
 	GameState nextGameState;
 	GameObject* player1;
+	PlayerController* playerController;
 	GameObject* player2;
 	//GameObject* player3;
-	std::vector<GameObject*> bullets;
+	//std::vector<GameObject*> bullets;
 };

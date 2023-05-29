@@ -11,6 +11,7 @@ public:
 	void ShutDown();
 	void getMessage(const Message* msg);
 
+	GameObject* getGameObjectByIndex(int index);
 	GameObject* CreateGameObject(XMVECTOR translation, float scaling, const std::string& name, PhysicsComponent::PhysicsType _type);
 private:
 	std::vector<GameObject*>  gameObjects;
