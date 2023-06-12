@@ -6,6 +6,7 @@ extern Renderer* RENDERER;
 
 Sprite::Sprite(GameObject* parent) : IComponent(parent) {
 	registerComponent();
+	componentName = "sprite";
 }
 
 void Sprite::registerComponent() {
@@ -15,7 +16,7 @@ void Sprite::registerComponent() {
 }
 
 const std::string& Sprite::getName() {
-	return "sprite";
+	return componentName;
 }
 
 Texture* Sprite::getSpriteSource() {

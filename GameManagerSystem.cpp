@@ -86,22 +86,24 @@ void GameManagerSystem::getMessage(const Message* msg) {
 			auto other = obj2;
 			if (obj1->name != "bullet") {
 				bullet = obj2;
-				other = obj1;
+				other = obj1; 
 			}
 			obj1->MarkForDeletion();
 			obj2->MarkForDeletion();
 
 		}*/
-		/*if (dynamic_cast<Sprite*>(obj1->getComponent("sprite"))->textureName == "bullet") {
+		if ((dynamic_cast<Sprite*>(obj1->getComponent("sprite"))->textureName == "bullet"
+			|| dynamic_cast<Sprite*>(obj1->getComponent("sprite"))->textureName == "spaceship")
+			&& dynamic_cast<Sprite*>(obj2->getComponent("sprite"))->textureName == "enemy") {
 			obj1->MarkForDeletion();
-		}
-		if (dynamic_cast<Sprite*>(obj2->getComponent("sprite"))->textureName == "bullet") {
 			obj2->MarkForDeletion();
-		}*/
-		if(FACTORY->getGameObjectByIndex(2) != nullptr)
-			FACTORY->getGameObjectByIndex(2)->MarkForDeletion();
-		if(FACTORY->getGameObjectByIndex(1) != nullptr) 
-			FACTORY->getGameObjectByIndex(1)->MarkForDeletion();
+		}
+		else if ((dynamic_cast<Sprite*>(obj2->getComponent("sprite"))->textureName == "bullet"
+			|| dynamic_cast<Sprite*>(obj2->getComponent("sprite"))->textureName == "spaceship")
+			&& dynamic_cast<Sprite*>(obj1->getComponent("sprite"))->textureName == "enemy") {
+			obj2->MarkForDeletion();
+			obj2->MarkForDeletion();
+		}
 		printf("Two objects collide!\n");
 		break;
 	}

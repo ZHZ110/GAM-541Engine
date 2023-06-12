@@ -62,6 +62,6 @@ GameObject* GameFactory::CreateGameObject(XMVECTOR translation, float scaling, c
 	new_animation->textureName = name;
 	GO->components.push_back(new_sprite);
 	GO->components.push_back(new_animation);
-	GO->components.push_back(new PhysicsComponent(GO,_type));
+	GO->components.push_back(new PhysicsComponent(GO,_type, name));
 	return GO;
 }

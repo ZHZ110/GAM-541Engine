@@ -148,7 +148,9 @@
     <ClInclude Include="Box2D\b2_polygon_circle_contact.h" />
     <ClInclude Include="Box2D\b2_polygon_contact.h" />
     <ClInclude Include="box2d\box2d.h" />
+    <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CircleCollider.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Cube.h" />
     <ClInclude Include="d3dx11effect.h" />
@@ -174,7 +176,9 @@
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="MouseEvent.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Physics2D.h" />
     <ClInclude Include="PhysicsComponent.h" />
+    <ClInclude Include="PhysicsEntity.h" />
     <ClInclude Include="PhysicsSystem.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="Renderer.h" />
@@ -237,7 +241,9 @@
     <ClCompile Include="Box2D\b2_wheel_joint.cpp" />
     <ClCompile Include="Box2D\b2_world.cpp" />
     <ClCompile Include="Box2D\b2_world_callbacks.cpp" />
+    <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CircleCollider.cpp" />
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Cube.cpp" />
     <ClCompile Include="GameEngine.cpp" />
@@ -252,6 +258,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="MouseEvent.cpp" />
+    <ClCompile Include="Physics2D.cpp" />
     <ClCompile Include="PhysicsComponent.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
     <ClCompile Include="PlayerController.cpp" />

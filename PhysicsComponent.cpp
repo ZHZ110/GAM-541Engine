@@ -4,7 +4,8 @@
 
 extern PhysicsSystem* PHYSICS_SYS;
 
-PhysicsComponent::PhysicsComponent(GameObject* parent, PhysicsType _type) : IComponent(parent) {
+PhysicsComponent::PhysicsComponent(GameObject* parent, PhysicsType _type, const std::string& _objectName) 
+	: IComponent(parent), objectName(_objectName) {
 	type = _type;
 	registerComponent();
 	if (XMVectorGetX(parent->getScale()) == 0.1) {
@@ -23,6 +24,10 @@ void PhysicsComponent::registerComponent() {
 
 const std::string& PhysicsComponent::getName() {
 	return "PhysicsComponent";
+}
+
+const std::string& PhysicsComponent::getObjectName() {
+	return objectName;
 }
 
 PhysicsComponent::PhysicsType PhysicsComponent::getType() {

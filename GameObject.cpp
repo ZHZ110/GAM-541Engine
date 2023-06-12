@@ -13,6 +13,7 @@ GameObject::~GameObject() {
 }
 
 void GameObject::MarkForDeletion() {
+	render = false;
 	active = false;
 }
 
@@ -29,8 +30,7 @@ void GameObject::setRender(bool isRendering) {
 
 IComponent* GameObject::getComponent(const std::string& name) {
 	for (int i = 0; i < components.size(); ++i) {
-		int x = components.at(i)->getName().compare(name);
-		if (x == 0) {
+		if (components.at(i)->getName() == name) {
 			return components[i];
 		}
 	}

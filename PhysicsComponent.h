@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "IComponent.h"
+#include "Physics2D.h"
 
 using namespace DirectX;
 
@@ -11,9 +12,10 @@ public:
 		DYNAMIC = 1,
 		KINEMATIC = 2
 	};
-	PhysicsComponent(GameObject* parent, PhysicsType _type);
+	PhysicsComponent(GameObject* parent, PhysicsType _type, const std::string& _objectName);
 	void registerComponent();
 	const std::string& getName();
+	const std::string& getObjectName();
 	PhysicsType getType();
 	bool getFixedRotation();
 	void* runtimeBody = nullptr; // storage for runtime
@@ -27,5 +29,6 @@ public:
 	float restitution_threshold = 0.5f;
 private:
 	PhysicsType type;
+	std::string objectName;
 	bool fixedRotation = false;
 };  

@@ -16,7 +16,8 @@ public:
 	void addPhysicsComponent(PhysicsComponent* body);
 private:
 	std::vector<PhysicsComponent*> physicsComponents;
-	b2World* m_physics_world = nullptr;
-	const int32_t velocityIterations = 6;
-	const int32_t positionIterations = 2;
+	Physics2D* physics_2d_world = nullptr;
+	//b2World* m_physics_world = nullptr;
+	//const int32_t velocityIterations = 6;
+	//const int32_t positionIterations = 2;
 };

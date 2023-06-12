@@ -22,7 +22,8 @@ PhysicsSystem::PhysicsSystem() {
 
 void PhysicsSystem::Initialize() {
 	// create box2D world
-	m_physics_world = new b2World({0.0f, 0.0f});
+	physics_2d_world = new Physics2D();
+	/*m_physics_world = new b2World({0.0f, 0.0f});
 	// go through each physics component and fill in the type,pos and angle for bodyDef
 	for (int i = 0; i < physicsComponents.size(); ++i) {
 		b2BodyDef bodyDef;
@@ -48,6 +49,23 @@ void PhysicsSystem::Initialize() {
 		fixtureDef.restitutionThreshold = physicsComponents[i]->restitution_threshold;
 		fixtureDef.obj_ptr = physicsComponents[i]->getParent();
 		body->CreateFixture(&fixtureDef); //create the fixture
+	}*/
+	for (int i = 0; i < physicsComponents.size(); ++i) {
+		if (physicsComponents[i]-> getObjectName()  == "spaceship") {
+			CircleCollider* spaceship_collider = new CircleCollider(PhysicsType::DYNAMIC, physicsComponents[i]->getParent()->getTranslate(), 0.15f);
+			spaceship_collider->parent = physicsComponents[i]->getParent();
+			physics_2d_world->physics_entities.push_back(spaceship_collider);
+		}
+		else if (physicsComponents[i]->getObjectName() == "enemy") {
+			CircleCollider* enemy_collider = new CircleCollider(PhysicsType::STATIC, physicsComponents[i]->getParent()->getTranslate(), 0.15f);
+			enemy_collider->parent = physicsComponents[i]->getParent();
+			physics_2d_world->physics_entities.push_back(enemy_collider);
+		}
+		else if (physicsComponents[i]->getObjectName() == "bullet") {
+			BoxCollider* bullet_collider = new BoxCollider(PhysicsType::DYNAMIC, physicsComponents[i]->getParent()->getTranslate(), 0.05f);
+			bullet_collider->parent = physicsComponents[i]->getParent();
+			physics_2d_world->physics_entities.push_back(bullet_collider);
+		}
 	}
 }
 
@@ -55,10 +73,22 @@ void PhysicsSystem::Update(float dt) {
 	// check if there's inactive components
 	for (int i = 0; i < physicsComponents.size(); ++i) {
 		if (physicsComponents[i] != NULL && !physicsComponents[i]->getParent()->getActive()) {
+			physics_2d_world->physics_entities.at(i)->active = false;
 			physicsComponents[i] = nullptr;
 		}
 	}
-	b2Body* body = (b2Body*)m_physics_world->GetBodyList();
+	for (int i = 0; i < physics_2d_world->physics_entities.size(); ++i) {
+		if (physics_2d_world->physics_entities.at(i)->active == true) {
+			// get all the positions and send it to physics_2d_world
+			physics_2d_world->physics_entities.at(i)->position = physicsComponents[i]->getParent()->getTranslate();
+		}
+	}
+	bool collision = physics_2d_world->CollisionDetection();
+	if (collision) {
+		ObjectCollide collision_event = ObjectCollide(physics_2d_world->collision_pair.first, physics_2d_world->collision_pair.second);
+		ENGINE->BroadcastMessage(&collision_event);
+	}
+	/*b2Body* body = (b2Body*)m_physics_world->GetBodyList();
 	for (int i = 0; i < physicsComponents.size(); ++i) {
 		if (physicsComponents[i] == NULL) {
 			//m_physics_world->DestroyBody(body);
@@ -83,7 +113,7 @@ void PhysicsSystem::Update(float dt) {
 		}
 		body = body->GetNext();
 	}
-	m_physics_world->Step(0.0f, velocityIterations, positionIterations);
+	m_physics_world->Step(0.0f, velocityIterations, positionIterations);*/
 	// update the position in physics world
 	//m_physics_world->Step(dt, velocityIterations, positionIterations);
 	//b2Body* body = (b2Body*)m_physics_world->GetBodyList();
@@ -99,8 +129,11 @@ void PhysicsSystem::Update(float dt) {
 
 void PhysicsSystem::ShutDown() {
 	// destroy box2D world
-	delete m_physics_world;
+	/*delete m_physics_world;
 	m_physics_world = nullptr;
+	PHYSICS_SYS = nullptr;*/
+	delete physics_2d_world;
+	physics_2d_world = nullptr;
 	PHYSICS_SYS = nullptr;
 }
 

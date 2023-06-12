@@ -243,6 +243,18 @@
     <ClInclude Include="PlayerController.h">
       <Filter>Engine Systems\Controller System</Filter>
     </ClInclude>
+    <ClInclude Include="PhysicsEntity.h">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics2D.h">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClInclude>
+    <ClInclude Include="BoxCollider.h">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClInclude>
+    <ClInclude Include="CircleCollider.h">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cube.cpp">
@@ -454,6 +466,15 @@
     </ClCompile>
     <ClCompile Include="Command.cpp">
       <Filter>Engine Systems\Controller System</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics2D.cpp">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClCompile>
+    <ClCompile Include="CircleCollider.cpp">
+      <Filter>Engine Systems\Physics System</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxCollider.cpp">
+      <Filter>Engine Systems\Physics System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

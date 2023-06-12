@@ -27,5 +27,6 @@ private:
 	int numCols;
 	int currFrame;
 	int totalFrames;
+	std::string componentName;
 	Texture* spriteSource;
 };
